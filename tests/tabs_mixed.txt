@@ -1,0 +1,8 @@
+Hello
+	Begin with a tab
+	  Small offset		Two tabs
+Trailing spaces        
+Trailing tabs			
+
+   
+	
