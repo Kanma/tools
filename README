@@ -1,0 +1,22 @@
+This repository contains a collection of small utility scripts.
+
+Any use, commercial or not, is allowed.
+
+
+---------------------------------------
+- clean_source.py
+---------------------------------------
+
+Usage: %prog [options] [ext1] [ext2] [...]
+
+Apply the following transformations to all the files with the
+given extension(s) in the current folder (and below):
+
+  - Replace TAB characters with spaces, keeping the current
+    alignement
+  - Remove trailing spaces at the end of lines
+  - Ensure that all lines ends with the same EOL sequence
+  - Ensure that the file ends with an empty line
+
+Extensions are given in the form:
+  .cpp .h .txt (no asterisk at the beginning)
