@@ -67,7 +67,7 @@ def process(options, path, files):
             result.write(eol.join(lines))
             result.close()
 
-            print "MODIFIED: %s" % fullpath[len(options.rootdir)+1:]
+            print("MODIFIED: %s" % fullpath[len(options.rootdir)+1:])
             options.counter += 1 
 
 
@@ -107,7 +107,7 @@ Any use, commercial or not, is allowed
     (options, args) = parser.parse_args()
 
     if len(args) == 0:
-        print "ERROR: No extension provided\n"
+        print("ERROR: No extension provided\n")
         parser.print_help()
         sys.exit(1)
 
@@ -116,12 +116,13 @@ Any use, commercial or not, is allowed
 
     # Process the files in the current directory
     options.rootdir = os.getcwd()
-    os.path.walk(options.rootdir, process, options)
+    for root, dirs, files in os.walk(options.rootdir):
+        process(options, root, files)
 
     if options.counter > 0:
         print
 
     if options.counter > 1:
-        print "Done (%d files modified)!" % options.counter
+        print("Done (%d files modified)!" % options.counter)
     else:
-        print "Done (%d file modified)!" % options.counter
+        print("Done (%d file modified)!" % options.counter)
